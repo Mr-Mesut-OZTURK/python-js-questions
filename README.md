@@ -1,1 +1,0 @@
-# clarusway-python-assigment
