@@ -12,8 +12,56 @@ String.prototype.toJadenCase = function () {
     by Jaden Smith. The strings are actual quotes from Jaden Smith, 
     but they are not capitalized in the same way he originally typed them.
     */`
-  
-    return this.split(' ').map(item => (item !== "" ? (item[0].toUpperCase() + item.slice(1)): "")).join(" ")
-}
 
+    return this.split(' ').map(item => (item !== "" ? (item[0].toUpperCase() + item.slice(1)) : "")).join(" ")
+}
 // console.log("i want to go home.".toJadenCase())
+
+
+
+
+
+function isPangram1(string) {
+    `/* 
+    A pangram is a sentence that contains every single letter of the alphabet 
+    at least once. For example, the sentence "The quick brown fox jumps over 
+    the lazy dog" is a pangram, because it uses the letters A-Z at least once 
+    (case is irrelevant).
+
+    Given a string, detect whether or not it is a pangram. Return True if it is, 
+    False if not. Ignore numbers and punctuation.
+    */`
+
+    newString = string.toLowerCase().split("").filter((a, b, c) => { return a.match(/[a-z]/) })
+
+    return newString.filter((a, b, c) => { return c.indexOf(a) === b }).length === 26
+}
+// console.log(isPangram1("The quick brown fox jumps over the lazy dog"))
+
+
+
+
+
+function isPangram2(string) {
+
+    `/* 
+    A pangram is a sentence that contains every single letter of the alphabet 
+    at least once. For example, the sentence "The quick brown fox jumps over 
+    the lazy dog" is a pangram, because it uses the letters A-Z at least once 
+    (case is irrelevant).
+
+    Given a string, detect whether or not it is a pangram. Return True if it is, 
+    False if not. Ignore numbers and punctuation.
+    */`
+
+
+    var abc = "abcdefghijklmnopqrstuvwxwz".split("")
+    string = string.toLowerCase()
+
+    for (i of string) {
+        abc = abc.filter(e => { return e !== i })
+    }
+
+    return abc.length === 0 && "it is pangram" || "it is not pangram"
+}
+// console.log(isPangram2("The quick brown fox jumps over the lazy dog"))
