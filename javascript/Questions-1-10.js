@@ -1,3 +1,4 @@
+// QUESTİON 1 ####################################################################################
 String.prototype.toJadenCase = function () {
     `/*
     Jaden Smith, the son of Will Smith, is the star of films 
@@ -20,7 +21,7 @@ String.prototype.toJadenCase = function () {
 
 
 
-
+// QUESTİON 2(1) ######################################################################################
 function isPangram1(string) {
     `/* 
     A pangram is a sentence that contains every single letter of the alphabet 
@@ -41,7 +42,7 @@ function isPangram1(string) {
 
 
 
-
+// QUESTİON 2(2)
 function isPangram2(string) {
 
     `/* 
@@ -65,3 +66,44 @@ function isPangram2(string) {
     return abc.length === 0 && "it is pangram" || "it is not pangram"
 }
 // console.log(isPangram2("The quick brown fox jumps over the lazy dog"))
+
+
+
+
+
+// QUESTİON 3 #######################################################################################
+`
+Trolls are attacking your comment section!
+A common way to deal with this situation is to remove all 
+of the vowels from the trolls' comments, neutralizing the threat.
+Your task is to write a function that takes a string and 
+return a new string with all vowels removed.
+
+For example, the string "This website is for losers LOL!" 
+would become "Ths wbst s fr lsrs LL!".
+
+Note: for this kata y isn't considered a vowel.
+`
+
+function disemvowel1(str) {
+    const vowelList = ["i", "e", "u", "a", "o", "I", "E", "U", "A", "O"].toString();
+    return str.split("").filter((a, b, c) => {
+        return !vowelList.includes(a)
+    }).join("")
+}
+
+function disemvowel2(str) {
+    const vowelList = ["i", "e", "u", "a", "o", "I", "E", "U", "A", "O"];
+    let newstr = "";
+    for (i of str) {
+        if (!vowelList.includes(i)) {
+            newstr += i
+        }
+    }
+    return newstr
+}
+
+function disemvowel3(str) {
+    return str.replace(/[aeiou]/gi, '');
+}
+// console.log(disemvowel3("This website, is for losers LOL!"))
