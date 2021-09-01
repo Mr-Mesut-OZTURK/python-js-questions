@@ -107,3 +107,66 @@ function disemvowel3(str) {
     return str.replace(/[aeiou]/gi, '');
 }
 // console.log(disemvowel3("This website, is for losers LOL!"))
+
+
+
+
+// QUESTİON 4 #######################################################################################
+function toArray(obj) {
+    `
+    make array of array from given object keys and values
+    `
+
+    let liste = []
+    for (i of Object.keys(obj)) {
+        liste.push([i, obj[i]])
+    }
+
+    return liste
+}
+// console.log(toArray({ a: 1, b: 2 }))
+
+
+
+
+
+// QUESTİON 5 #######################################################################################
+function iqTest(numbers) {
+    `
+    Bob is preparing to pass IQ test. The most frequent task in 
+    this test is to find out which one of the given numbers differs 
+    from the others. Bob observed that one number usually differs 
+    from the others in evenness. Help Bob — to check his answers, 
+    he needs a program that among the given numbers finds one that 
+    is different in evenness, and return a position of this number.
+
+    ! Keep in mind that your task is to help Bob solve a real IQ test, 
+    which means indexes of the elements start from 1 (not 0)
+
+    Examples:
+    iqTest("2 4 7 8 10") => 3 // Third number is odd, while the rest of the numbers are even
+
+    iqTest("1 2 1 1") => 2 // Second number is eve
+    `
+    let even = [], odd = [];
+    let newArr = numbers.split(" ")
+    for (i of newArr) {
+        Number(i) % 2 ? odd.push(i) : even.push(i);
+    }
+    return odd.length > even.length ? newArr.indexOf(even[0]) + 1 : newArr.indexOf(odd[0]) + 1
+
+}
+// console.log(iqTest("1, 3, 7, 8, 9, 5"))
+
+
+
+// QUESTİON 6 #######################################################################################
+
+
+
+
+
+// QUESTİON 7 #######################################################################################
+// QUESTİON 8 #######################################################################################
+// QUESTİON 9 #######################################################################################
+// QUESTİON 10 #######################################################################################
